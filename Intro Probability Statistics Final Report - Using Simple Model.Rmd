@@ -135,9 +135,9 @@ m <- nrow(results_ttest)
 type1_prob_uncorrected <- 1 - (1 - alpha)^m
 type1_prob_bonferroni <- 1 - (1 - alpha/m)^m
 
-cat("📊 Probability(at least one Type I error, uncorrected):",
+cat("1. Probability(at least one Type I error, uncorrected):",
 round(type1_prob_uncorrected, 4), "\n")
-cat("📉 After Bonferroni correction:",
+cat("2. After Bonferroni correction:",
 round(type1_prob_bonferroni, 4), "\n\n")
 
 print(results_ttest)
@@ -191,8 +191,8 @@ test_data$predicted <- predict(model1a, newdata = test_data)
 correlation <- cor(test_data$`Vas-12months`, test_data$predicted)
 mse <- mean((test_data$`Vas-12months` - test_data$predicted)^2)
 
-cat("📊 Correlation between actual and predicted:", round(correlation, 3), "\n")
-cat("📉 Mean Squared Error (MSE):", round(mse, 3), "\n")
+cat("1. Correlation between actual and predicted:", round(correlation, 3), "\n")
+cat("2. Mean Squared Error (MSE):", round(mse, 3), "\n")
 
 # 5. Plot predicted vs actual value
 
@@ -201,5 +201,6 @@ plot(test_data$`Vas-12months`, test_data$predicted,
      pch = 19, col = "blue")
 abline(0, 1, col = "red", lwd = 2)
 ```
+
 
 
